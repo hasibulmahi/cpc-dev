@@ -1,0 +1,7 @@
+.ant-message-custom-content {
+  display: flex;
+  align-items: center;
+}
+.ant-message-notice-content {
+  border-radius: 0.375rem /* 6px */;
+}

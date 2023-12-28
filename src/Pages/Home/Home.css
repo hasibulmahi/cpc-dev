@@ -1,0 +1,17 @@
+.cover-gradient {
+  background: linear-gradient(
+    89.01deg,
+    #ffffff 0.85%,
+    rgba(255, 255, 255, 0) 99.18%
+  );
+}
+
+.home-heading-bg {
+  background: linear-gradient(
+    89.98deg,
+    rgba(217, 217, 217, 0) 0.01%,
+    #ffffff 34.37%,
+    #ffffff 67.69%,
+    rgba(217, 217, 217, 0) 99.97%
+  );
+}

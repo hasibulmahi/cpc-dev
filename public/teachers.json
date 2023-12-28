@@ -1,0 +1,74 @@
+[
+  {
+    "uid": "",
+    "display_level": 1,
+    "priority_level": 1,
+    "name": "Saiful Islam",
+    "image": "https://iili.io/rPPwYv.png",
+    "designation": "Convener"
+  },
+  {
+    "uid": "",
+    "display_level": 2,
+    "priority_level": 2,
+    "name": "Amir Sohel",
+    "image": "https://iili.io/rPPEhP.png",
+    "designation": "Co-Convener"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 3,
+    "name": "Sadekur Rahman",
+    "image": "https://iili.io/rPPj3J.png",
+    "designation": "Research Advising Mentor"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 4,
+    "name": "Nusrat Jahan",
+    "image": "https://iili.io/rPPWEg.png",
+    "designation": "Advisor (R&J)"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 5,
+    "name": "Afjal Hossan Sarower",
+    "image": "https://iili.io/rPPGQ1.png",
+    "designation": "Advisor (R&J)"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 6,
+    "name": "Azizul Hakim Shuvo",
+    "image": "https://iili.io/rPP1TB.png",
+    "designation": "Advisor (JC&IC)"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 7,
+    "name": "MD. Umaid Hasan",
+    "image": "https://iili.io/rPPNvR.png",
+    "designation": "Advisor (JC&IC)"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 8,
+    "name": "MD. Aynul Hasan Nahid",
+    "image": "https://iili.io/rPPVCF.png",
+    "designation": "Advisor (Development)"
+  },
+  {
+    "uid": "",
+    "display_level": 3,
+    "priority_level": 9,
+    "name": "MD. Ferdouse Ahmed Foysal",
+    "image": "https://iili.io/rPPX4a.png",
+    "designation": "Advisor (ACM)"
+  }
+]
