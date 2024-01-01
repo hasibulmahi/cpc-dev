@@ -113,20 +113,17 @@ const Home = () => {
         </div>
 
         {/* Top Banner */}
-        <div className="relative">
-          <div>
-            <img src={backgroundImage} alt="Cover" className="w-full" />
-          </div>
-          <div className="absolute top-0 -bottom-px 2xl:bottom-0 right-0 left-0 cover-gradient">
-            <div className=" p-5 xl:p-32 2xl:p-48 flex items-center h-full">
-              <div className="xl:w-4/6 2xl:w-1/2 h-max">
-                <div className="text-sm xl:text-3xl text-[#015694]">
+        <div className="flex flex-col-reverse gap-x-5 items-center p-5 xl:py-[100px] bg-white">
+          <div className="top-0 -bottom-px 2xl:bottom-0 right-0 left-0 cover-gradient">
+            <div className="flex text-center my-3 items-center h-full">
+              <div className="w-full h-max">
+                <div className="text-xs sm:text-sm xl:text-3xl text-[#015694]">
                   Daffodil International University
                 </div>
-                <div className="font-bold text-xl xl:text-7xl text-[#015694] mt-0 xl:mt-2">
+                <div className="font-bold text-xl xl:text-4xl text-[#015694] mt-0 xl:mt-2">
                   Computer & <br className="hidden xl:block" /> Programming Club
                 </div>
-                <div className="text-2xs xl:text-xl font-light text-[#646464] mt-0 xl:mt-7">
+                <div className="text-sm xl:text-xl font-light text-[#646464] mt-0 xl:mt-7">
                   DIU CPC is the most primitive and extensive club as well as
                   the biggest club in Daffodil International University. We work
                   together to explore every field of Computer Science
@@ -140,34 +137,14 @@ const Home = () => {
                   </button>
                 </div>
               </div>
-              <div className="absolute right-0 xl:right-5 pt-0 xl:pt-12 2xl:pt-16">
-                <button
-                  className="flex items-center justify-center"
-                  onClick={() => {
-                    const newBanner =
-                      bgImages[
-                        bgImages.indexOf(backgroundImage) < bgImages.length - 1
-                          ? bgImages.indexOf(backgroundImage) + 1
-                          : 0
-                      ];
-                    setBackgroundImage(newBanner);
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="stroke-slate-300 hover:stroke-slate-400 duration-500 w-6 h-6 xl:w-16 xl:h-16"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <polyline points="9 6 15 12 9 18" />
-                  </svg>
-                </button>
-              </div>
             </div>
+          </div>
+          <div className="w-full">
+            <img
+              src={backgroundImage}
+              alt="Cover"
+              className="xl:h-[400px] 2xl:max-w-[1000px] w-full max-w-[600px] mx-auto"
+            />
           </div>
         </div>
         <div className="bg-[#015694] px-5 xl:px-10 py-0.5 xl:py-5">
