@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       {/* Context API */}
       <AuthProvider>
-        <Layout></Layout>
+        <Layout />
       </AuthProvider>
     </BrowserRouter>
   );

@@ -123,11 +123,11 @@ const Events = () => {
       {/* Navbar */}
       <div>
         <div className="hidden xl:block">
-          <Navbar></Navbar>
+          <Navbar />
           <div className="h-12 2xl:h-16"></div>
         </div>
         <div className="xl:hidden">
-          <NavbarMini></NavbarMini>
+          <NavbarMini />
         </div>
       </div>
 
@@ -154,7 +154,7 @@ const Events = () => {
 
         {/* Event */}
         {eventsView?.map((x) => (
-          <EventCard key={Math.random()} event={x}></EventCard>
+          <EventCard key={Math.random()} event={x} />
         ))}
 
         {/* Pagination */}
@@ -228,7 +228,7 @@ const Events = () => {
 
       {/* Footer */}
       <div className="mt-10">
-        <Footer></Footer>
+        <Footer />
       </div>
     </div>
   );
