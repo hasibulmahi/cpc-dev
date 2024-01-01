@@ -73,6 +73,7 @@ const Event = () => {
         <a
           className="text-lg bg-red-500 text-white py-1 px-5 rounded-md cursor-pointer hover:bg-red-600 hover:text-white"
           href="https://cutt.ly/lVQUy8p"
+          target="_blank"
         >
           Register
         </a>
