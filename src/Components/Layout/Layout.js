@@ -27,8 +27,8 @@ const Layout = () => {
   const { user } = useAuth();
   return (
     <Routes>
-      <Route path="*" element={<FourOFour></FourOFour>} />
-      <Route path="/" exact={true} element={<Home></Home>} />
+      <Route path="*" element={<FourOFour />} />
+      <Route path="/" exact={true} element={<Home />} />
       <Route
         path="/login"
         exact={true}
@@ -40,40 +40,24 @@ const Layout = () => {
           )
         }
       />
-      <Route path="/user/:id" exact={true} element={<Profile></Profile>} />
-      <Route path="/search" exact={true} element={<Search></Search>} />
-      <Route path="/forum" exact={true} element={<Forum></Forum>} />
-      <Route path="/forum/events" exact={true} element={<Events></Events>} />
-      <Route
-        path="/forum/events/:eventId"
-        exact={true}
-        element={<Event></Event>}
-      />
-      <Route
-        path="/certificate"
-        exact={true}
-        element={<CertificateVerify></CertificateVerify>}
-      />
+      <Route path="/user/:id" exact={true} element={<Profile />} />
+      <Route path="/search" exact={true} element={<Search />} />
+      <Route path="/forum" exact={true} element={<Forum />} />
+      <Route path="/forum/events" exact={true} element={<Events />} />
+      <Route path="/forum/events/:eventId" exact={true} element={<Event />} />
+      <Route path="/certificate" exact={true} element={<CertificateVerify />} />
       <Route
         path="/certificate/:id"
         exact={true}
-        element={<CertificateVerify></CertificateVerify>}
+        element={<CertificateVerify />}
       />
       {user?.uid ? (
-        <Route
-          path="/notifications"
-          exact={true}
-          element={<Notifications></Notifications>}
-        />
+        <Route path="/notifications" exact={true} element={<Notifications />} />
       ) : (
         ""
       )}
-      <Route path="/settings" exact={true} element={<Settings></Settings>} />
-      <Route
-        path="/settings/:page"
-        exact={true}
-        element={<Settings></Settings>}
-      />
+      <Route path="/settings" exact={true} element={<Settings />} />
+      <Route path="/settings/:page" exact={true} element={<Settings />} />
       {localStorage.getItem("authToken") ? (
         ""
       ) : (
@@ -85,61 +69,49 @@ const Layout = () => {
       user?.role === "dev" ||
       user?.role === "developer" ? (
         <>
-          <Route path="/admin" exact={true} element={<Dashboard></Dashboard>} />
-          <Route
-            path="/admin/dashboard"
-            exact={true}
-            element={<Dashboard></Dashboard>}
-          />
-          <Route
-            path="/admin/new-event"
-            exact={true}
-            element={<NewEvent></NewEvent>}
-          />
+          <Route path="/admin" exact={true} element={<Dashboard />} />
+          <Route path="/admin/dashboard" exact={true} element={<Dashboard />} />
+          <Route path="/admin/new-event" exact={true} element={<NewEvent />} />
           <Route
             path="/admin/manage-admin"
             exact={true}
-            element={<ManageAdmin></ManageAdmin>}
+            element={<ManageAdmin />}
           />
           <Route
             path="/admin/create-user"
             exact={true}
-            element={<CreateUser></CreateUser>}
+            element={<CreateUser />}
           />
           <Route
             path="/admin/organize-teachers"
             exact={true}
-            element={<OrganizeTeachers></OrganizeTeachers>}
+            element={<OrganizeTeachers />}
           />
           <Route
             path="/admin/organize-team"
             exact={true}
-            element={<OrganizeTeam></OrganizeTeam>}
+            element={<OrganizeTeam />}
           />
           <Route
             path="/admin/new-certificate"
             exact={true}
-            element={<NewCertificate></NewCertificate>}
+            element={<NewCertificate />}
           />
           <Route
             path="/admin/certificates"
             exact={true}
-            element={<CertificatesList></CertificatesList>}
+            element={<CertificatesList />}
           />
           <Route
             path="/admin/certificates/:certificateId"
             exact={true}
-            element={<CertificatesList></CertificatesList>}
+            element={<CertificatesList />}
           />
-          <Route
-            path="/admin/all-users"
-            exact={true}
-            element={<AllUsers></AllUsers>}
-          />
+          <Route path="/admin/all-users" exact={true} element={<AllUsers />} />
           <Route
             path="/admin/forum-threads"
             exact={true}
-            element={<ForumThreadsList></ForumThreadsList>}
+            element={<ForumThreadsList />}
           />
         </>
       ) : (

@@ -43,7 +43,7 @@ const Event = () => {
       {/* Navbar */}
       <div>
         <div className="hidden xl:block">
-          <Navbar></Navbar>
+          <Navbar />
           <div className="h-12 2xl:h-16"></div>
         </div>
         <div className="xl:hidden">
@@ -69,10 +69,19 @@ const Event = () => {
           </div>
         </div>
       </div>
+      <div className="flex justify-center items-center my-5">
+        <a
+          className="text-lg bg-red-500 text-white py-1 px-5 rounded-md cursor-pointer hover:bg-red-600 hover:text-white"
+          href="https://cutt.ly/lVQUy8p"
+          target="_blank"
+        >
+          Register
+        </a>
+      </div>
 
       {/* Footer */}
       <div className="mt-10">
-        <Footer></Footer>
+        <Footer />
       </div>
     </div>
   );
