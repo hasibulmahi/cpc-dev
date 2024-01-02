@@ -113,9 +113,9 @@ const Home = () => {
         </div>
 
         {/* Top Banner */}
-        <div className="flex flex-col-reverse gap-x-5 items-center p-5 xl:py-[100px] bg-white">
+        <div className="flex flex-col-reverse md:flex-row gap-x-5 items-center p-5 xl:py-[100px] bg-white">
           <div className="top-0 -bottom-px 2xl:bottom-0 right-0 left-0 cover-gradient">
-            <div className="flex text-center my-3 items-center h-full">
+            <div className="flex text-center md:text-left my-3 items-center h-full">
               <div className="w-full h-max">
                 <div className="text-xs sm:text-sm xl:text-3xl text-[#015694]">
                   Daffodil International University
