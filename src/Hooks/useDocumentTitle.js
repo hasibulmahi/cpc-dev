@@ -1,4 +1,4 @@
-This hook changes page title dynamically
+// This hook changes page title dynamically
 import { useRef, useEffect } from "react";
 
 function useDocumentTitle(title, prevailOnUnmount = false) {
