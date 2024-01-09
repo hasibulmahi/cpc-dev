@@ -41,7 +41,7 @@ code {
     monospace;
 }
 
-/* Antd Image Preview Fix */
+Antd Image Preview Fix
 .ant-image-preview-img-wrapper {
   display: flex;
   align-items: center;
