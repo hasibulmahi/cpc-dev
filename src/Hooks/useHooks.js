@@ -4,7 +4,7 @@ import axios from "axios";
 import { message } from "antd";
 
 const useHooks = () => {
-  Page Loading State
+  // Page Loading State
   const [pageLoading, setPageLoading] = useState(true);
 
   // Refresh Function
