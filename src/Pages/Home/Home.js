@@ -22,6 +22,7 @@ import FirstLoadModalData from "./FirstLoadModalData";
 import NewAdminModalData from "./NewAdminModalData";
 import http from "../../BaseUrl/http";
 import Sponsors from "./Sponsors";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   const bgImages = [
@@ -118,7 +119,8 @@ const Home = () => {
             <div className="flex text-center md:text-left my-3 items-center h-full">
               <div className="w-full h-max">
                 <div className="text-xs sm:text-sm xl:text-3xl text-[#015694]">
-                  Daffodil International University
+                  Daffodil International{" "}
+                  <Typewriter loop cursor words={["University"]} />
                 </div>
                 <div className="font-bold text-xl xl:text-4xl text-[#015694] mt-0 xl:mt-2">
                   Computer & <br className="hidden xl:block" /> Programming Club
