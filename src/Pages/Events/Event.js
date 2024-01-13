@@ -5,6 +5,7 @@ import Navbar from "../../Components/Navbar/Navbar";
 import NavbarMini from "../../Components/Navbar/NavbarMini";
 import useAuth from "../../Hooks/useAuth";
 import useDocumentTitle from "../../Hooks/useDocumentTitle";
+import SocialLinks from "../../Components/SocialLinks";
 
 const Event = () => {
   const eventId = useParams().eventId;
@@ -66,6 +67,7 @@ const Event = () => {
           <div className="divider before:bg-slate-200 dark:before:bg-slate-700 after:bg-slate-200 dark:after:bg-slate-700 xl:hidden"></div>
           <div className="text-slate-400 text-sm whitespace-pre-wrap break-words">
             {event?.description}
+            <SocialLinks />
           </div>
         </div>
       </div>
