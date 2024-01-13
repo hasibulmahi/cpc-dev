@@ -6,6 +6,7 @@ import NavbarMini from "../../Components/Navbar/NavbarMini";
 import useAuth from "../../Hooks/useAuth";
 import useDocumentTitle from "../../Hooks/useDocumentTitle";
 import SocialLinks from "../../Components/SocialLinks";
+import Countdown from "react-countdown";
 
 const Event = () => {
   const eventId = useParams().eventId;
@@ -53,6 +54,11 @@ const Event = () => {
       </div>
 
       <div className="mt-5 md:mt-16 min-h-[50vh] md:min-h-[70vh] w-11/12 xl:w-2/3 rounded-md mx-auto">
+        <div className="flex justify-end my-3">
+          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white inline-block rounded-lg xl:text-3xl">
+            <Countdown date={Date.now() + 100000} />
+          </div>
+        </div>
         <div className="rounded-lg shadow-sm mb-5">
           <img
             src={`https://static.cpc.daffodilvarsity.edu.bd/${event?.cover_image}`}
@@ -60,6 +66,7 @@ const Event = () => {
             className="w-full rounded-lg shadow-sm"
           />
         </div>
+
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-5">
           <div className="text-xl font-semibold text-slate-600 dark:text-slate-200">
             {event?.title}
