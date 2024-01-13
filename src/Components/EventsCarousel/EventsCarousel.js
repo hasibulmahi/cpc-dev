@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 import "swiper/css/pagination";
 import EventItem from "./EventItem";
+import { Link } from "react-router-dom";
 
 const EventsCarousel = ({ unExpiredEvents }) => {
   const compare = (a, b) => {
@@ -70,7 +71,7 @@ const EventsCarousel = ({ unExpiredEvents }) => {
   unExpiredEvents?.sort(compare);
 
   return (
-    <div>
+    <Link to="/">
       <Swiper
         initialSlide={0}
         spaceBetween={50}
@@ -107,7 +108,7 @@ const EventsCarousel = ({ unExpiredEvents }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </Link>
   );
 };
 

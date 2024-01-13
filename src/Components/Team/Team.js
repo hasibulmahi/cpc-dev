@@ -16,7 +16,7 @@ const Images = [
 
 const Team = ({ team = [] }) => {
   const [year, setYear] = useState(getYear);
-  const [imageIndex, setImageIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(Images.length - 1);
 
   const updateYear = (operator) => {
     if (operator === "+") {
@@ -39,22 +39,24 @@ const Team = ({ team = [] }) => {
       </div>
       <div className="w-3/5 lg:w-2/5 mt-5 mx-auto flex justify-around items-center text-[#939393]">
         <button
-          className="text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500"
+          className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 cursor-pointer ${
+            imageIndex === 0 ? "hidden" : null
+          }`}
           onClick={() => updateYear("-")}
-          disabled={imageIndex === 0}
         >
-          {"<"}
+          {`<TEAM ${year - 1}`}
         </button>
         <button className="text-lg lg:text-xl 2xl:text-2xl hover:text-orange-500 uppercase underline decoration-orange-500 underline-offset-2">
           <span className="hidden lg:inline">Team </span>
           {year}
         </button>
         <button
-          className="text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500"
+          className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
+            getYear() === year ? "hidden" : null
+          }`}
           onClick={() => updateYear("+")}
-          disabled={imageIndex === Images.length - 1}
         >
-          {">"}
+          {`TEAM ${year + 1}>`}
         </button>
       </div>
     </div>
