@@ -17,7 +17,7 @@ const Sponsors = () => {
         grabCursor={true}
         loop={true}
         autoplay={{
-          delay: 5000,
+          delay: 1000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
