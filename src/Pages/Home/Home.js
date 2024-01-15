@@ -119,11 +119,17 @@ const Home = () => {
             <div className="flex text-center md:text-left my-3 items-center h-full">
               <div className="w-full h-max">
                 <div className="text-xs sm:text-sm xl:text-3xl text-[#015694]">
-                  Daffodil International{" "}
-                  <Typewriter loop cursor words={["University"]} />
+                  Daffodil International University
+                  {/* Daffodil International{" "}
+                  <Typewriter loop cursor words={["University"]} /> */}
                 </div>
                 <div className="font-bold text-xl xl:text-4xl text-[#015694] mt-0 xl:mt-2">
-                  Computer & <br className="hidden xl:block" /> Programming Club
+                  {/* Computer & <br className="hidden xl:block" /> Programming Club */}
+                  <Typewriter
+                    loop
+                    cursor
+                    words={["Computer & Programming Club"]}
+                  />
                 </div>
                 <div className="text-sm xl:text-xl font-light text-[#646464] mt-0 xl:mt-7">
                   DIU CPC is the most primitive and extensive club as well as
