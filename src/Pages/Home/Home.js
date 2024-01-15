@@ -139,7 +139,7 @@ const Home = () => {
                     <span className="absolute bg-orange-300 w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
                     Read More
                   </button>
-                  <button className="ml-2 ring-2 ring-inset ring-[#EA9723] py-1 xl:py-2 px-2 xl:px-4 text-xs xl:text-2xl text-[#656565] font-normal rounded-br-xl xl:rounded-br-[35px] hover:text-sky-200">
+                  <button className="ml-2 ring-2 ring-inset ring-[#EA9723] py-1 xl:py-2 px-2 xl:px-4 text-xs xl:text-2xl text-[#656565] font-normal rounded-br-xl xl:rounded-br-[35px] hover:text-orange-400">
                     Contact Us
                   </button>
                 </div>
