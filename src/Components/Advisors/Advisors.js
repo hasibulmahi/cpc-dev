@@ -39,9 +39,10 @@ const Advisors = ({ advisors = [] }) => {
       <div className="w-3/5 lg:w-2/5 mt-5 mx-auto flex justify-around items-center text-[#939393]">
         <button
           className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 cursor-pointer ${
-            imageIndex === 0 ? "hidden" : null
+            imageIndex === 0 ? "cursor-not-allowed" : null
           }`}
           onClick={() => updateYear("-")}
+          disabled={imageIndex === 0}
         >
           {`<${year - 1}`}
         </button>
@@ -50,9 +51,10 @@ const Advisors = ({ advisors = [] }) => {
         </button>
         <button
           className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
-            getYear() === year ? "hidden" : null
+            getYear() === year ? "cursor-not-allowed" : null
           }`}
           onClick={() => updateYear("+")}
+          disabled={getYear() === year}
         >
           {`${year + 1}>`}
         </button>
