@@ -40,6 +40,35 @@ const Event = () => {
     );
   }
 
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+      return <span>You are good to go!</span>;
+    } else {
+      // Render a countdown
+      return (
+        <div className="flex justify-center xl:gap-5 gap-2 mb-5 items-center">
+          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white rounded-lg xl:text-lg text-[10px] flex flex-col text-center">
+            <span>{days}</span>
+            <span>Days</span>
+          </div>
+          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white rounded-lg xl:text-lg text-[10px] flex flex-col text-center">
+            <span>{hours}</span>
+            <span>Hours</span>
+          </div>
+          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white rounded-lg xl:text-lg text-[10px] flex flex-col text-center">
+            <span>{minutes}</span>
+            <span>Minutes</span>
+          </div>
+          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white rounded-lg xl:text-lg text-[10px] flex flex-col text-center">
+            <span>{seconds}</span>
+            <span>Seconds</span>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-200">
       {/* Navbar */}
@@ -54,11 +83,8 @@ const Event = () => {
       </div>
 
       <div className="mt-5 md:mt-16 min-h-[50vh] md:min-h-[70vh] w-11/12 xl:w-2/3 rounded-md mx-auto">
-        <div className="flex justify-end my-3">
-          <div className="xl:p-5 md:p-3 p-2 bg-orange-500 text-white inline-block rounded-lg xl:text-3xl">
-            <Countdown date={Date.now() + 100000} />
-          </div>
-        </div>
+        <Countdown date={Date.now() + 100000000} renderer={renderer} />
+        <div className="flex justify-end my-3"></div>
         <div className="rounded-lg shadow-sm mb-5">
           <img
             src={`https://static.cpc.daffodilvarsity.edu.bd/${event?.cover_image}`}
@@ -66,7 +92,6 @@ const Event = () => {
             className="w-full rounded-lg shadow-sm"
           />
         </div>
-
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm p-5">
           <div className="text-xl font-semibold text-slate-600 dark:text-slate-200">
             {event?.title}
