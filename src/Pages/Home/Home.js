@@ -154,7 +154,7 @@ const Home = () => {
 
         {/* Top Banner */}
         <div
-          className="w-full h-72 sm:h-96 md:h-[540px] lg:h-[640px] xl:h-[780px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
+          className="w-full h-72 sm:h-96 md:h-[540px] lg:h-screen flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
           style={{
             backgroundImage: `url(${
               currentSlider === 0
@@ -245,8 +245,8 @@ const Home = () => {
                   style={{ borderBottomRightRadius: 60 }}
                   className="text-xl w-36 h-16 border-2 border-sky-600 text-sky-600 relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg ml-3"
                 >
-                  <span className="absolute bg-sky-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
-                  <span className="absolute bg-sky-800 w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
+                  <span className="absolute bg-sky-600 w-40 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
+                  <span className="absolute bg-sky-800 w-40 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
                   Contact Us
                 </button>
               </div>
@@ -279,7 +279,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bg-[#015694] px-5 xl:px-10 py-0.5 xl:py-5">
+        {/* <div className="bg-[#015694] px-5 xl:px-10 py-0.5 xl:py-5">
           <div className="xl:w-4/5 mx-auto grid grid-cols-5 xl:grid-cols-8 items-center">
             <div className="text-white text-sm xl:text-2xl 2xl:text-3xl font-light">
               Flagship |
@@ -291,7 +291,7 @@ const Home = () => {
               | Events
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="my-10"></div>
         {unExpiredEvents?.length !== 0 ? (

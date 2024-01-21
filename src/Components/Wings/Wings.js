@@ -24,7 +24,7 @@ const Wings = () => {
           </div>
           <div className="mt-5 h-full flex items-end">
             <Link
-              to="/wings#acm"
+              to="/wings"
               className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
             >
               Read More...
@@ -46,7 +46,7 @@ const Wings = () => {
           </div>
           <div className="mt-5 h-full flex items-end">
             <Link
-              to="/wings#dev"
+              to="/wings"
               className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
             >
               Read More...
@@ -68,7 +68,7 @@ const Wings = () => {
           </div>
           <div className="mt-5 h-full flex items-end">
             <Link
-              to="/wings#r&j"
+              to="/wings"
               className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
             >
               Read More...
@@ -90,7 +90,7 @@ const Wings = () => {
           </div>
           <div className="mt-5 h-full flex items-end">
             <Link
-              to="/wings#jcic"
+              to="/wings"
               className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
             >
               Read More...

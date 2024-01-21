@@ -22,7 +22,7 @@ import Profile from "../../Pages/Profile/Profile";
 import Search from "../../Pages/Search/Search";
 import Settings from "../../Pages/Settings/Settings";
 import AllUsers from "../../Pages/AllUsers/AllUsers";
-
+import Wings from "../../Pages/Wings/Wings";
 const Layout = () => {
   const { user } = useAuth();
   return (
@@ -40,6 +40,7 @@ const Layout = () => {
           )
         }
       />
+      <Route path="/wings" exact={true} element={<Wings />} />
       <Route path="/user/:id" exact={true} element={<Profile />} />
       <Route path="/search" exact={true} element={<Search />} />
       <Route path="/forum" exact={true} element={<Forum />} />

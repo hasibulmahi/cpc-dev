@@ -31,23 +31,23 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              to="/"
+              to="/wings"
               className="mx-4 text-slate-600 hover:text-orange-500 transition ease-in-out duration-500"
             >
               Wings
             </Link>
-            <Link
+            {/* <Link
               to="/"
               className="mx-4 text-slate-600 hover:text-orange-500 transition ease-in-out duration-500"
             >
               Team
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="/"
               className="mx-4 text-slate-600 hover:text-orange-500 transition ease-in-out duration-500"
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               to="/forum/events"
               className="mx-4 text-slate-600 hover:text-orange-500 transition ease-in-out duration-500"
