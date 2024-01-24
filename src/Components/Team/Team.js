@@ -57,7 +57,7 @@ const Team = ({ team = [] }) => {
           onClick={() => updateYear("+")}
           disabled={getYear() === year}
         >
-          {`TEAM ${year + 1}>`}
+          {`TEAM ${year}>`}
         </button>
       </div>
     </div>

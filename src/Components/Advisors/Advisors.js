@@ -55,7 +55,7 @@ const Advisors = ({ advisors = [] }) => {
           onClick={() => updateYear("+")}
           disabled={getYear() === year}
         >
-          {`${year + 1}>`}
+          {`${year}>`}
         </button>
       </div>
     </div>
