@@ -7,10 +7,9 @@ const getYear = () => {
 };
 
 const Images = [
-  "./images/image1.jpg",
-  "./images/image2.jpg",
-  "./images/image3.jpg",
-  "./images/image4.jpg",
+  "./images/advisors_panel_2021.jpg",
+  "./images/advisors_panel_2022.jpg",
+  "./images/advisors_panel_2023.jpg",
 ];
 
 const Advisors = ({ advisors = [] }) => {
@@ -44,10 +43,10 @@ const Advisors = ({ advisors = [] }) => {
           onClick={() => updateYear("-")}
           disabled={imageIndex === 0}
         >
-          {`<${year - 1}`}
+          {`<${year - 2}`}
         </button>
         <button className="text-lg lg:text-xl 2xl:text-4xl hover:text-orange-500 uppercase underline decoration-orange-500 underline-offset-2">
-          {year}
+          {year - 1}
         </button>
         <button
           className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${

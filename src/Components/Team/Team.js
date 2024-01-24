@@ -8,10 +8,9 @@ const getYear = () => {
 };
 
 const Images = [
-  "./images/image1.jpg",
-  "./images/image2.jpg",
-  "./images/image3.jpg",
-  "./images/image4.jpg",
+  "./images/students_panel_2021.jpg",
+  "./images/students_panel_2022.jpg",
+  "./images/students_panel_2023.jpg",
 ];
 
 const Team = ({ team = [] }) => {
@@ -45,11 +44,11 @@ const Team = ({ team = [] }) => {
           onClick={() => updateYear("-")}
           disabled={imageIndex === 0}
         >
-          {`<TEAM ${year - 1}`}
+          {`<TEAM ${year - 2}`}
         </button>
         <button className="text-lg lg:text-xl 2xl:text-2xl hover:text-orange-500 uppercase underline decoration-orange-500 underline-offset-2">
           <span className="hidden lg:inline">Team </span>
-          {year}
+          {year - 1}
         </button>
         <button
           className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
