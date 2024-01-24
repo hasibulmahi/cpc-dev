@@ -195,7 +195,7 @@ const Home = () => {
               </div>
               <div className="mt-2 xl:mt-7">
                 <button
-                  className={`lg:text-xl px-[1.5em] py-[1em] ${colors.bgColor} text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg`}
+                  className={`lg:text-sm px-[1.5em] py-[1em] ${colors.bgColor} text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg`}
                 >
                   <span
                     className={`absolute ${colors.bgColor} w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all`}
@@ -207,7 +207,7 @@ const Home = () => {
                 </button>
                 <button
                   style={{ borderBottomRightRadius: 30 }}
-                  className={`lg:text-xl px-[1.5em] py-[1em] border-2 ${colors.borderColor} ${colors.textColor} relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg ml-3`}
+                  className={`lg:text-sm px-[1.5em] py-[1em] border-2 ${colors.borderColor} ${colors.textColor} relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg ml-3`}
                 >
                   <span
                     className={`absolute ${colors.bgColor} w-40 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all`}
