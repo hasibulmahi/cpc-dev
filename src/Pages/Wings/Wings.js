@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import NavbarMini from "../../Components/Navbar/NavbarMini";
 import { Card } from "antd";
+import { colors } from "../../constants";
 
 const Wings = () => {
   return (
@@ -20,23 +21,33 @@ const Wings = () => {
       <div className="mt-5 md:mt-10 min-h-[50vh]">
         <div className="flex justify-center">
           <div className="text-2xl font-semibold py-2 px-32 xl:px-36 home-heading-bg text-center">
-            Our <span className="text-sky-700">Wings</span>
+            Our <span className={colors.textColor}>Wings</span>
           </div>
         </div>
-        <div className="px-5">
-          {wings?.map((wing) => (
-            <Card
-              key={wing.id}
-              className="xl:w-1/2 sm:w-2/3 mx-auto rounded-xl mt-5"
-              title={wing.title}
-            >
-              <div className="w-full bg-black">
-                <img src={wing.image} alt="Image" />
+        {wings?.map((wing) => (
+          <div className="mt-10 mx-10 lg:mx-52 p-8 bg-gray-300 rounded-xl">
+            <div className="relative h-[250px] lg:min-h-[430px]">
+              <div className="z-40 bg-gradient-to-b from-[#bdbdbd11] via-[#bdbdbd22] to-[#bdbdbd] absolute w-full h-full top-0 left-0"></div>
+              <img
+                src={wing.image}
+                alt="bg"
+                className="w-full h-full absolute top-0 left-0"
+              />
+              <div className="absolute z-50 text-white text-center bottom-0 left-1/2 -translate-x-1/2 mb-2">
+                <h1
+                  className={`${colors.textColor} text-sm md:text-4xl font-bold`}
+                >
+                  {wing.title}
+                </h1>
+                <p className=" text-2xs">Daffofil International University</p>
+                <h6 className="text-xs md:text-xl font-medium text-black">
+                  Computer & Programming Club
+                </h6>
               </div>
-              <p className="mt-5">{wing.description}</p>
-            </Card>
-          ))}
-        </div>
+            </div>
+            <div className="my-5 text-black">{wing.description}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

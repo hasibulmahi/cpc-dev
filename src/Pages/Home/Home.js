@@ -23,6 +23,8 @@ import NewAdminModalData from "./NewAdminModalData";
 import http from "../../BaseUrl/http";
 import Sponsors from "./Sponsors";
 import { Typewriter } from "react-simple-typewriter";
+import { colors } from "../../constants.js";
+import CountUp from "react-countup";
 
 const Home = () => {
   const bgImages = [
@@ -171,91 +173,113 @@ const Home = () => {
               </div>
             </div>
           </div> */}
-        <div className="w-full mx-auto h-[240px] md:h-[470px] lg:h-[500px] pt-[100px] flex flex-col lg:flex-row items-center overflow-hidden gap-5 lg:gap-10">
-          <div className="relative overflow-hidden flex items-center">
-            {/* dots */}
-            <div className="flex h-fit rounded-full z-50 absolute right-0 bottom-1/2 w-fit gap-1 rotate-90">
-              {sliders.map((_, inx) => (
+        <div className="flex flex-col-reverse lg:flex-row items-center">
+          <div className="my-2 lg:my-0 text-center lg:text-left lg:w-1/2 px-4 left-0 lg:absolute drop-shadow-lg text-white rounded-lg">
+            <div className="w-full h-max">
+              <div className="text-lg xl:text-3xl text-black">
+                Daffodil International University
+              </div>
+              <div
+                className={`font-bold text-xl xl:text-4xl ${colors.textColor} mt-0 xl:mt-2`}
+              >
+                <Typewriter
+                  loop
+                  cursor
+                  words={["Computer & Programming Club"]}
+                />
+              </div>
+              <div className="text-sm xl:text-xl font-light text-[#666] mt-0 xl:mt-7">
+                DIU CPC is the most primitive and extensive club as well as the
+                biggest club in Daffodil International University. We work
+                together to explore every field of Computer Science
+              </div>
+              <div className="mt-2 xl:mt-7">
                 <button
-                  key={inx}
-                  onClick={() => setCurrentSlider(inx)}
-                  className={`rounded-full duration-300 bg-white ${
-                    currentSlider === inx ? "w-10" : "w-2"
-                  } h-2`}
-                ></button>
-              ))}
-            </div>
-            <div className="w-1/2 px-4 left-0 absolute drop-shadow-lg text-white rounded-lg">
-              <div className="w-full h-max">
-                <div className="text-xs sm:text-sm xl:text-3xl text-black">
-                  Daffodil International University
-                </div>
-                <div className="font-bold text-xl xl:text-4xl text-[#015694] mt-0 xl:mt-2">
-                  <Typewriter
-                    loop
-                    cursor
-                    words={["Computer & Programming Club"]}
-                  />
-                </div>
-                <div className="text-sm xl:text-xl font-light text-[#666] mt-0 xl:mt-7">
-                  DIU CPC is the most primitive and extensive club as well as
-                  the biggest club in Daffodil International University. We work
-                  together to explore every field of Computer Science
-                </div>
-                <div className="mt-2 xl:mt-7">
-                  <button className="text-xl w-32 h-16 bg-sky-500 text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg">
-                    <span className="absolute bg-sky-600 w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
-                    <span className="absolute bg-sky-800 w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-                    Read More
-                  </button>
-                  <button
-                    style={{ borderBottomRightRadius: 30 }}
-                    className="text-xl w-36 h-16 border-2 border-sky-600 text-sky-600 relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg ml-3"
-                  >
-                    <span className="absolute bg-sky-600 w-40 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span>
-                    <span className="absolute bg-sky-800 w-40 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>
-                    Contact Us
-                  </button>
-                </div>
+                  className={`lg:text-xl w-[8em] h-[4em] ${colors.bgColor} text-white relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg`}
+                >
+                  <span
+                    className={`absolute ${colors.bgColor} w-36 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all`}
+                  ></span>
+                  <span
+                    className={`absolute ${colors.bgDeep} w-36 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all`}
+                  ></span>
+                  Read More
+                </button>
+                <button
+                  style={{ borderBottomRightRadius: 30 }}
+                  className={`lg:text-xl w-[8em] h-[4em] border-2 ${colors.borderColor} ${colors.textColor} relative overflow-hidden group z-10 hover:text-white duration-1000 rounded-lg ml-3`}
+                >
+                  <span
+                    className={`absolute ${colors.bgColor} w-40 h-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all`}
+                  ></span>
+                  <span
+                    className={`absolute ${colors.bgDeep} w-40 h-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all`}
+                  ></span>
+                  Contact Us
+                </button>
               </div>
             </div>
-            {/* slider container */}
-            <div
-              className="w-screen ease-linear duration-300 flex flex-col h-[340px] md:h-[400px] transform-gpu relative"
-              style={{ transform: `translateY(-${currentSlider * 100}%)` }}
-            >
-              {/* sliders */}
-              {sliders.map((_, inx) => (
-                <div
-                  key={inx}
-                  className="w-1/2 ml-auto duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
-                >
-                  <img
-                    src={_}
-                    className="w-full h-[340px] md:h-[400px] object-fit"
-                    alt={`Slider - ${inx + 1}`}
-                  />
-                </div>
-              ))}
+          </div>
+          <div className="w-full mx-auto h-[240px] md:h-[470px] lg:h-[500px] lg:pt-[100px] flex flex-col lg:flex-row items-center overflow-hidden gap-0 md:gap-5 lg:gap-10">
+            <div className="relative overflow-hidden">
+              {/* dots */}
+              <div className="hidden h-fit rounded-full z-50 lg:absolute lg:right-0 lg:bottom-1/2 w-fit gap-1 rotate-90">
+                {sliders.map((_, inx) => (
+                  <button
+                    key={inx}
+                    onClick={() => setCurrentSlider(inx)}
+                    className={`rounded-full duration-300 bg-white ${
+                      currentSlider === inx ? "w-10" : "w-2"
+                    } h-2`}
+                  ></button>
+                ))}
+              </div>
+              {/* slider container */}
+              <div
+                className="w-screen ease-linear duration-300 flex flex-col h-[340px] md:h-[400px] transform-gpu relative"
+                style={{ transform: `translateY(-${currentSlider * 100}%)` }}
+              >
+                {/* sliders */}
+                {sliders.map((_, inx) => (
+                  <div
+                    key={inx}
+                    className="lg:w-1/2 ml-auto duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
+                  >
+                    <img
+                      src={_}
+                      className="w-full h-[340px] md:h-[400px] object-fit"
+                      alt={`Slider - ${inx + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-2/3 flex justify-evenly h-[100px] rounded-3xl mx-auto bg-[#EF7D14] mt-[30px]">
-          <div className="flex flex-col items-center justify-center font-semibold text-white">
-            <p className="text-xl">8000+</p>
-            <p>Current Members</p>
+        <div className="mx-1 sm:mx-5 md:w-2/3 flex justify-evenly py-5 lg:py-0 lg:h-[100px] rounded-3xl md:mx-auto bg-[#EF7D14] mt-[30px]">
+          <div className="flex flex-col flex-wrap items-center justify-center font-semibold text-white">
+            <p className="text-2xs md:text-xl">
+              <CountUp duration={4} className="counter" end={8000} />+
+            </p>
+            <p className="text-2xs md:text-sm text-center">Current Members</p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
-            <p className="text-xl">1000+</p>
-            <p>Alumni</p>
+            <p className="text-2xs md:text-xl">
+              <CountUp duration={4} className="counter" end={1000} />+
+            </p>
+            <p className="text-2xs md:text-sm">Alumni</p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
-            <p className="text-xl">19</p>
-            <p>Committee Member</p>
+            <p className="text-2xs md:text-xl">
+              <CountUp duration={10} className="counter" end={19} />
+            </p>
+            <p className="text-2xs md:text-sm text-center">Committee Member</p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
-            <p className="text-xl">50</p>
-            <p>Executive</p>
+            <p className="text-2xs md:text-xl">
+              <CountUp duration={10} className="counter" end={50} />
+            </p>
+            <p className="text-2xs md:text-sm">Executive</p>
           </div>
         </div>
       </div>
@@ -282,7 +306,7 @@ const Home = () => {
               <div className="text-2xl font-semibold py-2 px-32 xl:px-36 home-heading-bg text-center">
                 Ongoing
                 <span className="text-slate-400 dark:text-slate-500">/</span>
-                Upcoming <span className="text-sky-700">Events</span>
+                Upcoming <span className={colors.textColor}>Events</span>
               </div>
             </div>
             <div className="px-5 xl:px-0">
@@ -302,7 +326,7 @@ const Home = () => {
       <div className="bg-[#F1F5F9] py-10">
         <div className="flex justify-center">
           <div className="text-2xl font-semibold py-2 px-32 xl:px-36 home-heading-bg text-center">
-            Our <span className="text-sky-700">Wings</span>
+            Our <span className={colors.textColor}>Wings</span>
           </div>
         </div>
         <Wings></Wings>
@@ -314,7 +338,7 @@ const Home = () => {
       <div className="bg-[#F1F5F9] py-10">
         <div className="flex justify-center">
           <div className="text-2xl font-semibold py-2 px-32 xl:px-36 home-heading-bg text-center">
-            Meet The <span className="text-sky-700">Advisors</span>
+            Meet The <span className={colors.textColor}>Advisors</span>
           </div>
         </div>
         <div className="text-slate-500 dark:text-slate-200 text-sm text-center mt-2">
@@ -329,7 +353,7 @@ const Home = () => {
       <div className="bg-[#F1F5F9] py-10">
         <div className="flex justify-center">
           <div className="text-2xl font-semibold py-2 px-32 xl:px-36 home-heading-bg text-center">
-            Meet The <span className="text-sky-700">Team</span>
+            Meet The <span className={colors.textColor}>Team</span>
           </div>
         </div>
         <div className="text-slate-500 dark:text-slate-200 text-sm text-center mt-2">

@@ -12,6 +12,7 @@
     "daisyui": "^2.17.0",
     "react": "^18.1.0",
     "react-countdown": "^2.3.5",
+    "react-countup": "^6.5.0",
     "react-dom": "^18.1.0",
     "react-easy-crop": "^4.5.1",
     "react-responsive-carousel": "^3.2.23",

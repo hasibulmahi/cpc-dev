@@ -37,9 +37,9 @@ const Team = ({ team = [] }) => {
           className="w-full rounded-md shadow-sm"
         />
       </div>
-      <div className="w-3/5 lg:w-2/5 mt-5 mx-auto flex justify-around items-center text-[#939393]">
+      <div className="md:w-3/5 lg:w-2/5 mt-5 mx-auto flex justify-around items-center text-[#939393]">
         <button
-          className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 cursor-pointer ${
+          className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 cursor-pointer ${
             imageIndex === 0 ? "cursor-not-allowed" : null
           }`}
           onClick={() => updateYear("-")}
@@ -52,7 +52,7 @@ const Team = ({ team = [] }) => {
           {year}
         </button>
         <button
-          className={`text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
+          className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
             getYear() === year ? "cursor-not-allowed" : null
           }`}
           onClick={() => updateYear("+")}

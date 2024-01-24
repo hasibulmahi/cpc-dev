@@ -4,6 +4,7 @@ import wing_dev from "../../Media/Images/wing_dev.png";
 import wing_rj from "../../Media/Images/wing_r&j.png";
 import wing_jcic from "../../Media/Images/wing_jcic.png";
 import { Link } from "react-router-dom";
+import { colors } from "../../constants";
 
 const Wings = () => {
   return (
@@ -25,7 +26,7 @@ const Wings = () => {
           <div className="mt-5 h-full flex items-end">
             <Link
               to="/wings"
-              className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
+              className={`ring-2 ${colors.ringDeep} ${colors.ringHover} duration-300 ring-inset px-3 py-2 ${colors.textColor} text-xs xl:text-base rounded-md`}
             >
               Read More...
             </Link>
@@ -47,7 +48,7 @@ const Wings = () => {
           <div className="mt-5 h-full flex items-end">
             <Link
               to="/wings"
-              className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
+              className={`ring-2  ${colors.ringDeep} ${colors.ringHover} duration-300 ring-inset px-3 py-2 ${colors.textColor} text-xs xl:text-base rounded-md`}
             >
               Read More...
             </Link>
@@ -69,7 +70,7 @@ const Wings = () => {
           <div className="mt-5 h-full flex items-end">
             <Link
               to="/wings"
-              className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
+              className={`ring-2  ${colors.ringDeep} ${colors.ringHover} duration-300 ring-inset px-3 py-2 ${colors.textColor} text-xs xl:text-base rounded-md`}
             >
               Read More...
             </Link>
@@ -91,7 +92,7 @@ const Wings = () => {
           <div className="mt-5 h-full flex items-end">
             <Link
               to="/wings"
-              className="ring-2 ring-[#015694] hover:ring-sky-500 duration-300 ring-inset px-3 py-2 text-[#464646] text-xs xl:text-base rounded-md"
+              className={`ring-2  ${colors.ringDeep} ${colors.ringHover} duration-300 ring-inset px-3 py-2 ${colors.textColor} text-xs xl:text-base rounded-md`}
             >
               Read More...
             </Link>
