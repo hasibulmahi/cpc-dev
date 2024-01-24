@@ -256,7 +256,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="mx-1 sm:mx-5 md:w-2/3 flex justify-evenly py-5 lg:py-0 lg:h-[100px] rounded-3xl md:mx-auto bg-[#EF7D14] mt-[30px]">
+        <div className="mx-1 sm:mx-5 md:w-2/3 flex justify-evenly py-5 lg:py-0 lg:h-[100px] rounded-3xl md:mx-auto bg-gradient-to-r from-[#EF7D14] to-[#FF9843] via-[#FE7A36] mt-[30px]">
           <div className="flex flex-col flex-wrap items-center justify-center font-semibold text-white">
             <p className="text-2xs md:text-xl">
               <CountUp duration={4} className="counter" end={8000} />+
