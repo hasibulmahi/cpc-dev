@@ -236,7 +236,7 @@ const Home = () => {
               </div>
               {/* slider container */}
               <div
-                className="w-screen ease-linear duration-300 flex flex-col h-[340px] md:h-[400px] transform-gpu relative"
+                className="w-screen ease-linear duration-300 flex flex-col h-[300px] md:h-[400px] transform-gpu relative"
                 style={{ transform: `translateY(-${currentSlider * 100}%)` }}
               >
                 {/* sliders */}
@@ -247,7 +247,7 @@ const Home = () => {
                   >
                     <img
                       src={_}
-                      className="w-full h-[340px] md:h-[400px] object-fit"
+                      className="w-full h-[300px] md:h-[400px] object-fit"
                       alt={`Slider - ${inx + 1}`}
                     />
                   </div>
