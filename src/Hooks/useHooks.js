@@ -143,19 +143,46 @@ const useHooks = () => {
     });
   }, [refreshState]);
 
-  //certificates data area
+  //Carousel Images
   const [bgImages, setBgImages] = useState([]);
   useEffect(() => {
     async function getCarousels() {
       try {
         const data = await axios.get("/carousels/");
         setBgImages(data?.data);
-        console.log("Carousel: ", data);
       } catch (err) {
         console.log("Error: ", err);
       }
     }
     getCarousels();
+  }, [refreshState]);
+
+  //Advisors Images
+  const [teachers, setTeachers] = useState([]);
+  useEffect(() => {
+    async function getAdvisors() {
+      try {
+        const data = await axios.get("/committees/teacher/");
+        setTeachers(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getAdvisors();
+  }, [refreshState]);
+
+  //Students Images
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    async function getStudents() {
+      try {
+        const data = await axios.get("/committees/student/");
+        setStudents(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getStudents();
   }, [refreshState]);
 
   //-------------- handle registration --------------//
@@ -280,6 +307,8 @@ const useHooks = () => {
     logOut,
     displayNameArray,
     bgImages,
+    teachers,
+    students,
   };
 };
 

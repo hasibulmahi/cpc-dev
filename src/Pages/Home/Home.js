@@ -69,6 +69,8 @@ const Home = () => {
     user,
     pageLoading,
     bgImages: sliderImages,
+    teachers,
+    students,
   } = useAuth();
   const today = new Date().getTime();
   const unExpiredEvents = events.filter(
@@ -352,7 +354,7 @@ const Home = () => {
         <div className="text-slate-500 dark:text-slate-200 text-sm text-center mt-2">
           The advising teachers of DIU Computer & Programming Club
         </div>
-        <Advisors advisors={advisors}></Advisors>
+        <Advisors advisors={teachers}></Advisors>
       </div>
       <div className="text-slate-400 dark:text-slate-600 text-2xl font-semibold text-center my-10">
         -- - --
@@ -367,7 +369,7 @@ const Home = () => {
         <div className="text-slate-500 dark:text-slate-200 text-sm text-center mt-2">
           The core members of DIU Computer & Programming Club
         </div>
-        <Team team={team}></Team>
+        <Team team={students}></Team>
       </div>
 
       {/* Footer */}
