@@ -185,6 +185,20 @@ const useHooks = () => {
     getStudents();
   }, [refreshState]);
 
+  //Events
+  const [eventsList, setEventsList] = useState([]);
+  useEffect(() => {
+    async function getEventsList() {
+      try {
+        const data = await axios.get("/events/");
+        setEventsList(data?.data?.results);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getEventsList();
+  }, [refreshState]);
+
   //-------------- handle registration --------------//
 
   const handleRegistration = (name, email, password, id, phone, navigate) => {
@@ -309,6 +323,7 @@ const useHooks = () => {
     bgImages,
     teachers,
     students,
+    eventsList,
   };
 };
 
