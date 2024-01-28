@@ -61,7 +61,15 @@ const Home = () => {
     }
   }, []);
   useDocumentTitle("Computer Programming Club - DIU");
-  const { advisors, team, events, userFlags, user, pageLoading } = useAuth();
+  const {
+    advisors,
+    team,
+    events,
+    userFlags,
+    user,
+    pageLoading,
+    bgImages: sliderImages,
+  } = useAuth();
   const today = new Date().getTime();
   const unExpiredEvents = events.filter(
     (x) =>
@@ -240,13 +248,13 @@ const Home = () => {
                 style={{ transform: `translateY(-${currentSlider * 100}%)` }}
               >
                 {/* sliders */}
-                {sliders.map((_, inx) => (
+                {sliderImages.map((item, inx) => (
                   <div
                     key={inx}
                     className="lg:w-1/2 ml-auto duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
                   >
                     <img
-                      src={_}
+                      src={item.image}
                       className="w-full h-[340px] md:h-[400px] object-fit"
                       alt={`Slider - ${inx + 1}`}
                     />

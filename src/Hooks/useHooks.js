@@ -143,6 +143,21 @@ const useHooks = () => {
     });
   }, [refreshState]);
 
+  //certificates data area
+  const [bgImages, setBgImages] = useState([]);
+  useEffect(() => {
+    async function getCarousels() {
+      try {
+        const data = await axios.get("/carousels/");
+        setBgImages(data?.data);
+        console.log("Carousel: ", data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getCarousels();
+  }, [refreshState]);
+
   //-------------- handle registration --------------//
 
   const handleRegistration = (name, email, password, id, phone, navigate) => {
@@ -264,6 +279,7 @@ const useHooks = () => {
     handleLogin,
     logOut,
     displayNameArray,
+    bgImages,
   };
 };
 
