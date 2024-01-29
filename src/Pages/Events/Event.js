@@ -10,16 +10,14 @@ import Countdown from "react-countdown";
 
 const Event = () => {
   const eventId = useParams().eventId;
-  const { events } = useAuth();
-  let event = events.filter(
-    (x) => x.event_id.toLowerCase() === eventId.toLowerCase()
-  );
-  event = event[0]?.event_id ? event[0] : [];
+  const { eventsList } = useAuth();
+  let event1 = eventsList.filter((x) => x.slug === eventId);
+  let event = event1[0];
   useDocumentTitle(`Event - ${event?.title}`);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-  if (!/^\b[a-zA-Z0-9_]+\b$/.test(eventId) || event?.length === 0) {
+  if (!event) {
     return (
       <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-200 h-screen flex items-center justify-center">
         <div className="text-center">
@@ -83,11 +81,11 @@ const Event = () => {
       </div>
 
       <div className="mt-5 md:mt-16 min-h-[50vh] md:min-h-[70vh] w-11/12 xl:w-2/3 rounded-md mx-auto">
-        <Countdown date={Date.now() + 100000000} renderer={renderer} />
+        {/* <Countdown date={Date.now() + 100000000} renderer={renderer} /> */}
         <div className="flex justify-end my-3"></div>
         <div className="rounded-lg shadow-sm mb-5">
           <img
-            src={`https://static.cpc.daffodilvarsity.edu.bd/${event?.cover_image}`}
+            src={event?.thumbnail}
             alt="Event Cover"
             className="w-full rounded-lg shadow-sm"
           />
@@ -98,7 +96,28 @@ const Event = () => {
           </div>
           <div className="divider before:bg-slate-200 dark:before:bg-slate-700 after:bg-slate-200 dark:after:bg-slate-700 xl:hidden"></div>
           <div className="text-slate-400 text-sm whitespace-pre-wrap break-words">
-            {event?.description}
+            <div dangerouslySetInnerHTML={{ __html: event?.description }} />
+            {event?.speacker_name && (
+              <div className="my-5">
+                <div>
+                  💢 Speaker,
+                  <br />
+                  {event?.speaker_name}
+                </div>
+                <div>{event?.speaker_designation}</div>
+              </div>
+            )}
+            <div className="my-5">
+              {event?.registration_link && (
+                <div>📌 Registration link: {event?.registration_link}</div>
+              )}
+              {event?.note && <div>Note: {event?.registration_note}</div>}
+            </div>
+            <div>
+              {event?.started_date && <div>🗓 Date: {event?.started_date}</div>}
+              {event?.platform && <div>♻️ Platform: {event?.platform}</div>}
+              {/* <div>⏰ Time: {event?.started_time}</div> */}
+            </div>
             <SocialLinks />
           </div>
         </div>
@@ -106,7 +125,7 @@ const Event = () => {
       <div className="flex justify-center items-center my-5">
         <a
           className="text-lg bg-red-500 text-white py-1 px-5 rounded-md cursor-pointer hover:bg-red-600 hover:text-white"
-          href="https://cutt.ly/lVQUy8p"
+          href={event?.registration_link}
           target="_blank"
         >
           Register

@@ -96,7 +96,7 @@ const EventCard = ({ event = {} }) => {
       >
         <div className="bg-white dark:bg-slate-800 rounded-md shadow-sm grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 group">
           <div className="hidden md:block">
-            <Link to={`/forum/events/${event?.event_id}`}>
+            <Link to={`/forum/events/${event?.slug}`}>
               <div className="rounded-lg shadow-sm">
                 <img
                   src={event?.thumbnail}
