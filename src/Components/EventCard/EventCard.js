@@ -108,7 +108,7 @@ const EventCard = ({ event = {} }) => {
           </div>
           <div className="xl:col-span-2 py-2 px-5 relative">
             <EventCardRibbon
-              status={renderStatus(event?.start_date, event?.end_date)}
+              status={renderStatus(event?.started_date, event?.ended_date)}
             ></EventCardRibbon>
             <Link
               to={`/forum/events/${event?.slug}`}
@@ -134,7 +134,8 @@ const EventCard = ({ event = {} }) => {
                   <polyline points="12 7 12 12 15 15" />
                 </svg>
               </span>{" "}
-              {event?.started_date} - {event?.ended_date}
+              {renderDate(event?.started_date)} -{" "}
+              {renderDate(event?.ended_date)}
             </div>
             <div
               className={
@@ -230,7 +231,7 @@ const EventCard = ({ event = {} }) => {
             </span>
           </p>
           <p className="text-slate-600 dark:text-slate-200">
-            {renderDate(event?.start_date)} - {renderDate(event?.end_date)}
+            {renderDate(event?.started_date)} - {renderDate(event?.ended_date)}
           </p>
           <div className="modal-action">
             <label
