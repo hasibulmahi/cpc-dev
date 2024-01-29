@@ -143,6 +143,62 @@ const useHooks = () => {
     });
   }, [refreshState]);
 
+  //Carousel Images
+  const [bgImages, setBgImages] = useState([]);
+  useEffect(() => {
+    async function getCarousels() {
+      try {
+        const data = await axios.get("/carousels/");
+        setBgImages(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getCarousels();
+  }, [refreshState]);
+
+  //Advisors Images
+  const [teachers, setTeachers] = useState([]);
+  useEffect(() => {
+    async function getAdvisors() {
+      try {
+        const data = await axios.get("/committees/teacher/");
+        setTeachers(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getAdvisors();
+  }, [refreshState]);
+
+  //Students Images
+  const [students, setStudents] = useState([]);
+  useEffect(() => {
+    async function getStudents() {
+      try {
+        const data = await axios.get("/committees/student/");
+        setStudents(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getStudents();
+  }, [refreshState]);
+
+  //Events
+  const [eventsList, setEventsList] = useState([]);
+  useEffect(() => {
+    async function getEventsList() {
+      try {
+        const data = await axios.get("/events/");
+        setEventsList(data?.data?.results);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
+    }
+    getEventsList();
+  }, [refreshState]);
+
   //-------------- handle registration --------------//
 
   const handleRegistration = (name, email, password, id, phone, navigate) => {
@@ -264,6 +320,10 @@ const useHooks = () => {
     handleLogin,
     logOut,
     displayNameArray,
+    bgImages,
+    teachers,
+    students,
+    eventsList,
   };
 };
 

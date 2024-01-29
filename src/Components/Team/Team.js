@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 const getYear = () => {
@@ -16,12 +16,15 @@ const Images = [
 const Team = ({ team = [] }) => {
   const [year, setYear] = useState(getYear);
   const [imageIndex, setImageIndex] = useState(Images.length - 1);
+  const [index, setIndex] = useState(0);
 
   const updateYear = (operator) => {
     if (operator === "+") {
       setYear(year + 1);
+      setIndex(index - 1);
       setImageIndex(imageIndex + 1);
     } else {
+      setIndex(index + 1);
       setYear(year - 1);
       setImageIndex(imageIndex - 1);
     }
@@ -31,7 +34,7 @@ const Team = ({ team = [] }) => {
     <div className="mt-5 mb-10 p-5">
       <div className="w-11/12 lg:w-4/5 mx-auto rounded-md">
         <img
-          src={Images[imageIndex]}
+          src={team[index]?.thumbnail}
           alt=""
           className="w-full rounded-md shadow-sm"
         />
@@ -44,11 +47,11 @@ const Team = ({ team = [] }) => {
           onClick={() => updateYear("-")}
           disabled={imageIndex === 0}
         >
-          {`<TEAM ${year - 2}`}
+          {`<TEAM ${team[index]?.year - 1}`}
         </button>
         <button className="text-lg lg:text-xl 2xl:text-2xl hover:text-orange-500 uppercase underline decoration-orange-500 underline-offset-2">
           <span className="hidden lg:inline">Team </span>
-          {year - 1}
+          {team[index]?.year}
         </button>
         <button
           className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
@@ -57,7 +60,7 @@ const Team = ({ team = [] }) => {
           onClick={() => updateYear("+")}
           disabled={getYear() === year}
         >
-          {`TEAM ${year}>`}
+          {`TEAM ${+team[index]?.year + 1}>`}
         </button>
       </div>
     </div>

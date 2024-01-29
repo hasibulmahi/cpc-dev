@@ -10,7 +10,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Events = () => {
-  const { events, user } = useAuth();
+  const { events, eventsList, user } = useAuth();
+
   const compare = (a, b) => {
     const today = new Date().getTime();
     let aFlag = 0;
@@ -153,7 +154,7 @@ const Events = () => {
         </div>
 
         {/* Event */}
-        {eventsView?.map((x) => (
+        {eventsList?.map((x) => (
           <EventCard key={Math.random()} event={x} />
         ))}
 

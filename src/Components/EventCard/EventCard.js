@@ -1,7 +1,7 @@
 import { message } from "antd";
 import { Link } from "react-router-dom";
 import EventCardRibbon from "./EventCardRibbon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import http from "../../BaseUrl/http";
 import useAuth from "../../Hooks/useAuth";
 
@@ -79,6 +79,7 @@ const EventCard = ({ event = {} }) => {
   const { toggleRefresh, user } = useAuth();
   const [actionVisibility, setActionVisibility] = useState(false);
   const width = window.innerWidth > 0 ? window.innerWidth : window.screen.width;
+
   return (
     <>
       <div
@@ -95,10 +96,10 @@ const EventCard = ({ event = {} }) => {
       >
         <div className="bg-white dark:bg-slate-800 rounded-md shadow-sm grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 group">
           <div className="hidden md:block">
-            <Link to={`/forum/events/${event?.event_id}`}>
+            <Link to={`/forum/events/${event?.slug}`}>
               <div className="rounded-lg shadow-sm">
                 <img
-                  src={`https://static.cpc.daffodilvarsity.edu.bd/${event?.cover_image}`}
+                  src={event?.thumbnail}
                   alt="Event Cover"
                   className="w-full h-full rounded-l-lg shadow-sm"
                 />
@@ -110,7 +111,7 @@ const EventCard = ({ event = {} }) => {
               status={renderStatus(event?.started_date, event?.ended_date)}
             ></EventCardRibbon>
             <Link
-              to={`/forum/events/${event?.event_id}`}
+              to={`/forum/events/${event?.slug}`}
               className="text-xl font-semibold text-slate-600 dark:text-slate-200 group-hover:text-orange-600 dark:group-hover:text-orange-500 w-11/12"
             >
               {event?.title}
@@ -133,7 +134,8 @@ const EventCard = ({ event = {} }) => {
                   <polyline points="12 7 12 12 15 15" />
                 </svg>
               </span>{" "}
-              {renderDate(event?.start_date)} - {renderDate(event?.end_date)}
+              {renderDate(event?.started_date)} -{" "}
+              {renderDate(event?.ended_date)}
             </div>
             <div
               className={
@@ -141,9 +143,8 @@ const EventCard = ({ event = {} }) => {
                   ? "mt-2 text-slate-400 description-text-3 whitespace-pre-wrap break-words"
                   : "mt-2 text-slate-400 description-text-7 whitespace-pre-wrap break-words"
               }
-            >
-              {event?.description}
-            </div>
+              dangerouslySetInnerHTML={{ __html: event?.description }}
+            />
           </div>
         </div>
         {/* Edit & Delete */}
@@ -230,7 +231,7 @@ const EventCard = ({ event = {} }) => {
             </span>
           </p>
           <p className="text-slate-600 dark:text-slate-200">
-            {renderDate(event?.start_date)} - {renderDate(event?.end_date)}
+            {renderDate(event?.started_date)} - {renderDate(event?.ended_date)}
           </p>
           <div className="modal-action">
             <label

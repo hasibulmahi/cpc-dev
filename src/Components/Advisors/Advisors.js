@@ -15,13 +15,16 @@ const Images = [
 const Advisors = ({ advisors = [] }) => {
   const [year, setYear] = useState(getYear);
   const [imageIndex, setImageIndex] = useState(Images.length - 1);
+  const [index, setIndex] = useState(0);
 
   const updateYear = (operator) => {
     if (operator === "+") {
       setYear(year + 1);
+      setIndex(index - 1);
       setImageIndex(imageIndex + 1);
     } else {
       setYear(year - 1);
+      setIndex(index + 1);
       setImageIndex(imageIndex - 1);
     }
   };
@@ -30,7 +33,7 @@ const Advisors = ({ advisors = [] }) => {
     <div className="mt-5 mb-10 p-5">
       <div className="w-11/12 lg:w-4/5 mx-auto rounded-md">
         <img
-          src={Images[imageIndex]}
+          src={advisors[index]?.thumbnail}
           alt=""
           className="w-full rounded-md shadow-sm"
         />
@@ -43,10 +46,10 @@ const Advisors = ({ advisors = [] }) => {
           onClick={() => updateYear("-")}
           disabled={imageIndex === 0}
         >
-          {`<${year - 2}`}
+          {`<${advisors[index]?.year - 1}`}
         </button>
         <button className="text-lg lg:text-xl 2xl:text-4xl hover:text-orange-500 uppercase underline decoration-orange-500 underline-offset-2">
-          {year - 1}
+          {advisors[index]?.year}
         </button>
         <button
           className={`md:text-xl lg:text-2xl 2xl:text-2xl hover:text-orange-500 ${
@@ -55,7 +58,7 @@ const Advisors = ({ advisors = [] }) => {
           onClick={() => updateYear("+")}
           disabled={getYear() === year}
         >
-          {`${year}>`}
+          {`${+advisors[index]?.year + 1}>`}
         </button>
       </div>
     </div>
