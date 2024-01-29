@@ -107,7 +107,7 @@ const EventCard = ({ event = {} }) => {
           </div>
           <div className="xl:col-span-2 py-2 px-5 relative">
             <EventCardRibbon
-              status={renderStatus(event?.start_date, event?.end_date)}
+              status={renderStatus(event?.started_date, event?.ended_date)}
             ></EventCardRibbon>
             <Link
               to={`/forum/events/${event?.event_id}`}
