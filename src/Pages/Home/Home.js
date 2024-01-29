@@ -246,7 +246,7 @@ const Home = () => {
               </div>
               {/* slider container */}
               <div
-                className="w-screen ease-linear duration-300 flex flex-col h-[340px] md:h-[400px] transform-gpu relative"
+                className="w-screen ease-linear duration-300 flex flex-col h-[300px] md:h-[400px] transform-gpu relative"
                 style={{ transform: `translateY(-${currentSlider * 100}%)` }}
               >
                 {/* sliders */}
