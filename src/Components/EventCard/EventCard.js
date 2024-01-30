@@ -148,7 +148,7 @@ const EventCard = ({ event = {} }) => {
           </div>
         </div>
         {/* Edit & Delete */}
-        {user?.role === "dev" ||
+        {/* {user?.role === "dev" ||
         user?.role === "developer" ||
         user?.role === "mod" ||
         user?.role === "moderator" ||
@@ -210,7 +210,7 @@ const EventCard = ({ event = {} }) => {
           </div>
         ) : (
           ""
-        )}
+        )} */}
       </div>
 
       {/* Modal */}
