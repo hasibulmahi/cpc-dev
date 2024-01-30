@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./EventCarousel.css";
 import { Link } from "react-router-dom";
 import CountDown from "../CountDown/CountDown";
@@ -13,19 +13,18 @@ const EventItem = ({
 }) => {
   const today = new Date().getTime();
   const baseUrl = "https://static.cpc.daffodilvarsity.edu.bd/";
+
   return (
     <div className="min-h-full xl:w-2/3 bg-white dark:bg-slate-800 rounded-lg shadow-sm m-8 mx-auto group">
       <div className="relative">
         <div
           className="rounded-lg from-slate-400 bg-cover"
           style={{
-            backgroundImage: `url(${
-              image === "" ? DefaultCoverB64() : baseUrl + image
-            })`,
+            backgroundImage: `url(${image === "" ? DefaultCoverB64() : image})`,
           }}
         >
           <img
-            src={image === "" ? DefaultCoverB64() : baseUrl + image}
+            src={image === "" ? DefaultCoverB64() : image}
             alt="Event Cover"
             className="w-full rounded-lg invisible"
           />
@@ -73,7 +72,8 @@ const EventItem = ({
                 {title === "" ? "Title" : title}
               </div>
               <div className="mt-3 mb-3 text-sm description-text-5">
-                {description === "" ? "Description" : description}
+                {/* {description === "" ? "Description" : description} */}
+                <div dangerouslySetInnerHTML={{ __html: description }} />
               </div>
               <div className="text-slate-400 text-xs text-right w-full">
                 <Link
@@ -107,7 +107,8 @@ const EventItem = ({
                     {title === "" ? "Title" : title}
                   </div>
                   <div className="mt-2 mb-2 text-sm description-text-5 text-slate-400">
-                    {description === "" ? "Description" : description}
+                    <div dangerouslySetInnerHTML={{ __html: description }} />
+                    {/* {description === "" ? "Description" : description} */}
                   </div>
                   <div className="text-slate-400 text-xs text-right w-full">
                     <Link

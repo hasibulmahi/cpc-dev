@@ -71,16 +71,17 @@ const Home = () => {
     bgImages: sliderImages,
     teachers,
     students,
+    eventsList,
   } = useAuth();
   const today = new Date().getTime();
-  const unExpiredEvents = events.filter(
+  const unExpiredEvents = eventsList?.filter(
     (x) =>
       new Date(
-        x?.end_date.includes(" ") ||
-        x?.end_date.includes(",") ||
-        x?.end_date.includes(":")
-          ? x?.end_date
-          : parseInt(x?.end_date)
+        x?.ended_date?.includes(" ") ||
+        x?.ended_date?.includes(",") ||
+        x?.ended_date?.includes(":")
+          ? x?.ended_date
+          : parseInt(x?.ended_date)
       ).getTime() > today
   );
 
@@ -321,6 +322,7 @@ const Home = () => {
             </div>
             <div className="px-5 xl:px-0">
               <EventsCarousel
+                key={eventsList?.slug}
                 unExpiredEvents={unExpiredEvents}
               ></EventsCarousel>
             </div>
