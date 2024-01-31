@@ -9,10 +9,13 @@ const CountDown = ({ date = 0, className = "countdown font-mono" }) => {
     minutes: 0,
     seconds: 0,
   });
-  let countDownDate = date.includes(" ")
-    ? new Date(date).getTime()
-    : parseInt(date);
+  var countDownDate = new Date(date);
+  var timestamp = countDownDate.getTime();
+  // let countDownDate = date.includes(" ")
+  //   ? new Date(date).getTime()
+  //   : parseInt(date);
   useEffect(() => {
+    console.log("Countdown: ", countDownDate);
     let x = setInterval(function () {
       let now = new Date().getTime();
       let distance = countDownDate - now;
@@ -36,7 +39,7 @@ const CountDown = ({ date = 0, className = "countdown font-mono" }) => {
         });
       }
     }, 1000);
-  }, [countDownDate]);
+  }, []);
 
   return (
     <div>
