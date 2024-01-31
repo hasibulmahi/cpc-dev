@@ -17,6 +17,61 @@ const Event = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  function getStartedDate() {
+    var inputDate = new Date(event?.started_date);
+    var timestamp = inputDate.getTime();
+    return timestamp;
+  }
+
+  function getDaySuffix(day) {
+    if (day >= 11 && day <= 13) {
+      return "th";
+    }
+    var lastDigit = day % 10;
+    switch (lastDigit) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  }
+
+  function getTime() {
+    var inputDatetime = new Date(event?.started_date);
+    var formattedTime = formatTime(inputDatetime);
+    return formattedTime;
+  }
+
+  function formatTime(datetime) {
+    var hours = datetime.getHours();
+    var minutes = datetime.getMinutes();
+    var ampm = hours >= 12 ? "pm" : "am";
+
+    // Convert to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // If hours is 0, set it to 12
+
+    // Add leading zero to minutes if needed
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    return hours + ":" + minutes + " " + ampm;
+  }
+
+  function getDate() {
+    var inputDate = new Date(event?.started_date);
+    var day = inputDate.getDate();
+    var month = inputDate.toLocaleString("en-US", { month: "long" });
+    var year = inputDate.getFullYear();
+    var suffix = getDaySuffix(day);
+    var formattedDate = day + suffix + " " + month + ", " + year;
+    return formattedDate;
+  }
+
   if (!event) {
     return (
       <div className="bg-slate-100 dark:bg-slate-900 dark:text-slate-200 h-screen flex items-center justify-center">
@@ -81,7 +136,7 @@ const Event = () => {
       </div>
 
       <div className="mt-5 md:mt-16 min-h-[50vh] md:min-h-[70vh] w-11/12 xl:w-2/3 rounded-md mx-auto">
-        {/* <Countdown date={Date.now() + 100000000} renderer={renderer} /> */}
+        <Countdown date={getStartedDate()} renderer={renderer} />
         <div className="flex justify-end my-3"></div>
         <div className="rounded-lg shadow-sm mb-5">
           <img
@@ -114,7 +169,8 @@ const Event = () => {
               {event?.note && <div>Note: {event?.registration_note}</div>}
             </div>
             <div>
-              {event?.started_date && <div>🗓 Date: {event?.started_date}</div>}
+              {event?.started_date && <div>🗓 Date: {getDate()}</div>}
+              {event?.started_date && <div>⏰ Time: {getTime()}</div>}
               {event?.platform && <div>♻️ Platform: {event?.platform}</div>}
               {/* <div>⏰ Time: {event?.started_time}</div> */}
             </div>
