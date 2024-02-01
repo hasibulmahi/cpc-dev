@@ -289,7 +289,7 @@ const Login = () => {
         <div className="w-11/12 xl:w-2/3 p-3 mx-auto flex items-center justify-center">
           <button
             id="login-page-submit"
-            className="btn btn-sm text-white hover:text-white bg-gradient-to-r from-[#EF7D14] to-[#FF9843] via-[#FE7A36] hover:bg-gradient-to-br shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 border-none"
+            className="btn btn-sm text-white hover:text-white bg-gradient-to-r from-[#EF7D14] to-[#FF9843] via-[#FE7A36] hover:bg-gradient-to-br shadow-lg shadow-orange-500/50 dark:shadow-lg dark:shadow-orange-800/80 border-none"
             onClick={() => {
               const validatedError = formValidate(
                 formError,
