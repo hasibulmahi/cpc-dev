@@ -8,30 +8,45 @@ import Navbar from "../../Components/Navbar/Navbar";
 import NavbarMini from "../../Components/Navbar/NavbarMini";
 import useAuth from "../../Hooks/useAuth";
 import useDocumentTitle from "../../Hooks/useDocumentTitle";
+import axios from "axios";
 
 const CertificateVerify = () => {
-  const { certificates } = useAuth();
-  const [certificate, setCertificate] = useState([]);
-  const id = useParams().id?.toLowerCase();
-  const certificateLoad = (id) => {
-    if (id !== "") {
-      const filteredCertificate = certificates.filter(
-        (x) => x.certificate_id.toLowerCase() === id
-      );
-      if (filteredCertificate?.length === 0) {
-        setCertificate([{ certificate_id: "empty" }]);
-      } else {
-        setCertificate(filteredCertificate);
-      }
-    } else {
-      setCertificate([]);
-    }
-  };
+  const [certificate, setCertificate] = useState();
+  // const { certificates } = useAuth();
+  // const [certificate, setCertificate] = useState([]);
+  const [id, setId] = useState();
+
   useEffect(() => {
-    if (id) {
-      certificateLoad(id.toLowerCase());
+    async function getCertificatesList() {
+      try {
+        const data = await axios.get(`/certificates/${id}/`);
+        setCertificate(data?.data);
+      } catch (err) {
+        console.log("Error: ", err);
+      }
     }
-  }, [id, certificates]);
+    getCertificatesList();
+  }, [id]);
+
+  // const certificateLoad = (id) => {
+  //   if (id !== "") {
+  //     const filteredCertificate = certificates.filter(
+  //       (x) => x.certificate_id.toLowerCase() === id
+  //     );
+  //     if (filteredCertificate?.length === 0) {
+  //       setCertificate([{ certificate_id: "empty" }]);
+  //     } else {
+  //       setCertificate(filteredCertificate);
+  //     }
+  //   } else {
+  //     setCertificate([]);
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (id) {
+  //     certificateLoad(id.toLowerCase());
+  //   }
+  // }, [id, certificates]);
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -79,11 +94,11 @@ const CertificateVerify = () => {
                 autoComplete="off"
                 defaultValue={id ? id : ""}
                 onBlur={(e) => {
-                  certificateLoad(e?.target.value.toLowerCase());
+                  setId(e?.target.value);
                 }}
                 onKeyUp={(key) => {
                   if (key.code === "Enter" || key.code === "NumpadEnter") {
-                    certificateLoad(key?.target.value.toLowerCase());
+                    setId(key?.target.value);
                   }
                 }}
               />
@@ -113,13 +128,13 @@ const CertificateVerify = () => {
               {/* Search Button Phone */}
               <button
                 className="block md:hidden"
-                onClick={() => {
-                  certificateLoad(
-                    document
-                      .getElementById("certificate-verify-field")
-                      .value.toLowerCase()
-                  );
-                }}
+                // onClick={() => {
+                //   certificateLoad(
+                //     document
+                //       .getElementById("certificate-verify-field")
+                //       .value.toLowerCase()
+                //   );
+                // }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -141,22 +156,21 @@ const CertificateVerify = () => {
           </div>
 
           {/* Result */}
-          {certificate[0]?.certificate_id ? (
-            certificate[0]?.certificate_id === "empty" ? (
+          {certificate ? (
+            certificate?.certificate_id === "empty" ? (
               <div className="mt-16 text-center font-semibold text-2xl text-slate-500">
                 Certificate Not Found{" "}
                 <div className="text-red-500 custom-bounce inline-flex">!</div>
               </div>
             ) : (
               <div className="grid grid-cols-1 xl:grid-cols-4 mt-16 xl:w-3/4 mx-auto p-5 gap-5">
-                {/* Certificate Holder Info */}
                 <div>
                   <div>
                     <div className="text-xs mb-0.5 text-slate-600 dark:text-slate-400">
                       Certificate Serial
                     </div>
                     <div className="text-xl mb-3 text-slate-700 dark:text-slate-300 font-medium uppercase">
-                      {certificate[0].certificate_id}
+                      {certificate.certificate_id}
                     </div>
                   </div>
                   <div>
@@ -164,7 +178,7 @@ const CertificateVerify = () => {
                       Certificate Holder Name
                     </div>
                     <div className="text-xl mb-3 text-slate-700 dark:text-slate-300 font-medium">
-                      {certificate[0].stu_name}
+                      {certificate.stu_name}
                     </div>
                   </div>
                   <div>
@@ -172,7 +186,7 @@ const CertificateVerify = () => {
                       ID
                     </div>
                     <div className="text-xl mb-3 text-slate-700 dark:text-slate-300 font-medium">
-                      {certificate[0].stu_id}
+                      {certificate.stu_id}
                     </div>
                   </div>
                   <div>
@@ -180,7 +194,7 @@ const CertificateVerify = () => {
                       Email
                     </div>
                     <div className="text-xl mb-3 text-slate-700 dark:text-slate-300 font-medium">
-                      {certificate[0].stu_email}
+                      {certificate.stu_email}
                     </div>
                   </div>
                   <div>
@@ -188,7 +202,7 @@ const CertificateVerify = () => {
                       Certificate offered for
                     </div>
                     <div className="text-xl mb-3 text-slate-700 dark:text-slate-300 font-medium">
-                      {certificate[0].program_name}
+                      {certificate.program_name}
                     </div>
                   </div>
                   <div>
@@ -200,11 +214,10 @@ const CertificateVerify = () => {
                     </div>
                   </div>
                 </div>
-                {/* Certificate Image */}
                 <div className="xl:col-span-3 max-w-max mx-auto">
                   <Image
                     className="rounded-lg"
-                    src={`https://static.cpc.daffodilvarsity.edu.bd/${certificate[0].certificate_image}`}
+                    src={certificate.certificate_image}
                   />
                 </div>
               </div>
