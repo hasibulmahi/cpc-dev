@@ -128,14 +128,14 @@ const Search = () => {
               className="mx-2 outline-0 w-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium md:font-semibold"
               placeholder="Search"
               autoComplete="off"
-              onChange={(e) => {
-                handleSearch(searchType, e?.target?.value);
-              }}
-              onKeyUp={(key) => {
-                if (key.code === "Enter" || key.code === "NumpadEnter") {
-                  handleSearch(searchType, key?.target?.value);
-                }
-              }}
+              // onChange={(e) => {
+              //   handleSearch(searchType, e?.target?.value);
+              // }}
+              // onKeyUp={(key) => {
+              //   if (key.code === "Enter" || key.code === "NumpadEnter") {
+              //     handleSearch(searchType, key?.target?.value);
+              //   }
+              // }}
             />
             {/* Cross Icon */}
             <button
