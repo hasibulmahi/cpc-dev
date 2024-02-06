@@ -308,7 +308,7 @@ const Login = () => {
         </div>
       </div>
 
-      Footer
+      {/* Footer */}
       <div className="mt-10">
         <Footer></Footer>
       </div>
