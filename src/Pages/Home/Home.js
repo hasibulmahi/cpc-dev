@@ -247,18 +247,18 @@ const Home = () => {
               </div>
               {/* slider container */}
               <div
-                className=" w-screen ease-linear duration-300 flex flex-col h-[300px] md:h-[400px] transform-gpu relative lg:pr-5"
+                className="w-screen ease-linear duration-300 flex flex-col h-[300px] md:h-[400px] transform-gpu relative"
                 style={{ transform: `translateY(-${currentSlider * 100}%)` }}
               >
                 {/* sliders */}
                 {sliderImages.map((item, inx) => (
                   <div
                     key={inx}
-                    className="lg:w-1/2 lg:ml-auto duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
+                    className="lg:w-1/2 ml-auto duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
                   >
                     <img
                       src={item.image}
-                      className="w-full h-[340px] md:h-[400px] object-fit rounded-md"
+                      className="w-full h-[340px] md:h-[400px] object-fit"
                       alt={`Slider - ${inx + 1}`}
                     />
                   </div>
