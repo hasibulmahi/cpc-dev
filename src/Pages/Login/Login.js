@@ -137,7 +137,6 @@ const Login = () => {
           <NavbarMini></NavbarMini>
         </div>
       </div>
-
       <div className="mt-5 md:mt-16 min-h-[50vh] md:min-h-[70vh]">
         <div className="bg-white dark:bg-slate-800 w-11/12 xl:w-2/3 rounded-md shadow-sm p-3 mx-auto grid grid-cols-1 xl:grid-cols-2 gap-y-5 xl:gap-5">
           <div className="text-center xl:text-left xl:px-5 xl:py-5">
@@ -307,7 +306,6 @@ const Login = () => {
           </button>
         </div>
       </div>
-
       {/* Footer */}
       <div className="mt-10">
         <Footer></Footer>
