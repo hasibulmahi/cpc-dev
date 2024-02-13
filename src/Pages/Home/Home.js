@@ -267,35 +267,40 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="mx-1 sm:mx-5 md:w-2/3 flex justify-evenly py-5 lg:py-0 lg:h-[100px] rounded-3xl md:mx-auto bg-gradient-to-r from-[#EF7D14] to-[#FF9843] via-[#FE7A36] mt-[30px]">
+        <div className="mx-1 sm:mx-5 md:w-2/3 flex justify-evenly py-5 lg:py-0 lg:h-[100px] rounded-3xl md:mx-auto bg-gradient-to-r from-[#E46127] to-[#E46127] via-[#E46127] mt-[30px]">
+          {/* bg-gradient-to-r from-[#EF7D14] to-[#FF9843] via-[#FE7A36] */}
           <div className="flex flex-col flex-wrap items-center justify-center font-semibold text-white">
             <p className="text-2xs md:text-xl">
               <CountUp duration={4} className="counter" end={8000} />+
             </p>
-            <p className="text-2xs md:text-sm text-center">Current Members</p>
+            <p className="text-2xs md:text-sm text-center font-light">
+              Current Members
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
             <p className="text-2xs md:text-xl">
               <CountUp duration={4} className="counter" end={1000} />+
             </p>
-            <p className="text-2xs md:text-sm">Alumni</p>
+            <p className="text-2xs md:text-sm font-light">Alumni</p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
             <p className="text-2xs md:text-xl">
               <CountUp duration={10} className="counter" end={19} />
             </p>
-            <p className="text-2xs md:text-sm text-center">Committee Member</p>
+            <p className="text-2xs md:text-sm text-center font-light">
+              Committee Member
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center font-semibold text-white">
             <p className="text-2xs md:text-xl">
               <CountUp duration={10} className="counter" end={50} />
             </p>
-            <p className="text-2xs md:text-sm">Executive</p>
+            <p className="text-2xs md:text-sm font-light">Executive</p>
           </div>
         </div>
       </div>
-
-      <div className="bg-[#015694] px-5 xl:px-10 py-0.5 xl:py-5 mt-5">
+      {/* #C2410C F9751A*/}
+      <div className="bg-gradient-to-r from-[#E46127] to-[#E46127] via-[#E46127] px-5 xl:px-10 py-0.5 xl:py-5 mt-5">
         <div className="xl:w-4/5 mx-auto grid grid-cols-5 xl:grid-cols-8 items-center">
           <div className="text-white text-sm xl:text-2xl 2xl:text-3xl font-light">
             Flagship |
