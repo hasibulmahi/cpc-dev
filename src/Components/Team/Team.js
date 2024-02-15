@@ -8,6 +8,9 @@ const getYear = () => {
 };
 
 const Images = [
+  "./images/students_panel_2018.jpg",
+  "./images/students_panel_2019.jpg",
+  "./images/students_panel_2020.jpg",
   "./images/students_panel_2021.jpg",
   "./images/students_panel_2022.jpg",
   "./images/students_panel_2023.jpg",
